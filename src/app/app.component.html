@@ -1,6 +1,8 @@
 <div class="text-layout">
 
-  <h1>{{ nombre | titlecase}}</h1>
+  <app-menu></app-menu>
+
+  <!-- <h1>{{ nombre | titlecase}}</h1>
   <h1>{{ numero | number}}</h1>
   <h1>{{ obj | json}}</h1>
 
@@ -13,6 +15,7 @@
 
   <p-card [header]="nombre | titlecase" subheader="Esto es un subheader">    
     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, est. Aliquam voluptate hic ab iusto et aut error odio perferendis repellat reiciendis, delectus facilis rem labore blanditiis architecto quibusdam? Placeat!
-</p-card>
+</p-card> -->
 
+<router-outlet></router-outlet>
 </div>
