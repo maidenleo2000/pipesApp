@@ -1,12 +1,19 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 
 //Modulo personalizado
-import { SharedModule } from './shared/shared.module';
 import { AppRouterModule } from './app-router.module';
+import { SharedModule } from './shared/shared.module';
+import { VentasModule } from './ventas/ventas.module';
 
+//Cambiar idioma local de la APP de forma global a español Argentina
+import localeEsAr from '@angular/common/locales/es-AR';
+import localeEsFr from '@angular/common/locales/fr';
+import {registerLocaleData} from '@angular/common';
+registerLocaleData(localeEsAr);
+registerLocaleData(localeEsFr);
 
 
 @NgModule({
@@ -16,9 +23,12 @@ import { AppRouterModule } from './app-router.module';
   imports: [
     BrowserModule,
     AppRouterModule,
-    SharedModule,    
+    SharedModule, 
+    VentasModule   
   ],
-  providers: [],
+  providers: [
+    {provide: LOCALE_ID, useValue: 'es-AR'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
