@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { interval } from 'rxjs';
 
 
 
@@ -61,4 +62,17 @@ export class NoComunesComponent {
       vuela: false
     }
    ]
+
+   //Async pipe
+
+
+   miObservable = interval(2000); 
+   //va a emitir numeros del 0 al inf con intervalos de 1 segundos o 1000 ms
+
+   valorPromesa = new Promise( (resolve, reject) =>{
+    setTimeout(() => {
+      resolve('Fin de la promesa, tenemos los datos guardados');
+    }, 3500);
+   });
+
 }

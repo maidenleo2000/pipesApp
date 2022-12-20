@@ -87,5 +87,19 @@
         
     </div>
 
+    <div class="col md:col-6">
+        <p-fieldset legend="Async Pipe" [toggleable]="true">
+            
+            <pre *ngIf="!(miObservable|async)">Resolviendo Interval..</pre>
+            <pre>{{miObservable | async}}</pre>
+
+            <!-- Muestro mensaje hasta que se resuelva la promesa -->
+            <pre *ngIf="!(valorPromesa|async)">Resolviendo Promesa</pre>
+            <pre>{{ valorPromesa | async }}</pre>
+
+        </p-fieldset>
+        
+    </div>
+
     
 </div>
